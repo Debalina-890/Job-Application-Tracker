@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JobTrack</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <h2>JobTrack</h2>
+
+        <div>
+            <a href="#">Dashboard</a>
+            <a href="#">Applications</a>
+        </div>
+    </nav>
+
+
+    <!-- Main Content -->
+    <main>
+
+        <h1>Job Application Dashboard</h1>
+
+        <p>Track and manage your job applications.</p>
+
+
+        <!-- Statistics -->
+        <section class="stats">
+
+            <div class="card">
+                <h3>Total Applications</h3>
+                <p id="totalApplications">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Interviews</h3>
+                <p id="interviews">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Selected</h3>
+                <p id="selected">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Rejected</h3>
+                <p id="rejected">0</p>
+            </div>
+
+        </section>
+
+        <!-- Applications -->
+        <section class="applications">
+
+            <div class="section-header">
+
+                <h2>My Applications</h2>
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Search company or job role..."
+                >
+                <select id="statusFilter">
+                    <option value="All">All Status</option>
+                    <option value="Applied">Applied</option>
+                    <option value="Online Test">Online Test</option>
+                    <option value="Interview">Interview</option>
+                    <option value="Selected">Selected</option>
+                    <option value="Rejected">Rejected</option>
+                </select>
+
+                <button onclick="showForm()">
+                    + Add Application
+                </button>
+
+            </div>
+
+
+            <div id="applicationList">
+
+                <p>No applications added yet.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Add Application Form -->
+        <section id="applicationForm" class="form-container">
+
+            <h2>Add Job Application</h2>
+
+            <form id="jobForm">
+
+                <input
+                    type="text"
+                    id="company"
+                    placeholder="Company Name"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="role"
+                    placeholder="Job Role"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="location"
+                    placeholder="Location"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="salary"
+                    placeholder="Salary / Package"
+                >
+
+                <select id="status">
+
+                    <option value="Applied">
+                        Applied
+                    </option>
+
+                    <option value="Online Test">
+                        Online Test
+                    </option>
+
+                    <option value="Interview">
+                        Interview
+                    </option>
+
+                    <option value="Selected">
+                        Selected
+                    </option>
+
+                    <option value="Rejected">
+                        Rejected
+                    </option>
+
+                </select>
+
+                <button type="submit">
+                    Add Application
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
