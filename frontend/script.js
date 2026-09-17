@@ -1,3 +1,4 @@
+const API_URL = "https://job-application-tracker-qx1m.onrender.com/api/applications";
 let applications = [];
 let editingId = null;
 
@@ -27,7 +28,7 @@ document.getElementById("jobForm").addEventListener("submit", async function(eve
 
             // ADD new application
             response = await fetch(
-                "http://localhost:5000/api/applications",
+                API_URL,
                 {
                     method: "POST",
                     headers: {
@@ -41,7 +42,7 @@ document.getElementById("jobForm").addEventListener("submit", async function(eve
 
             // UPDATE existing application
             response = await fetch(
-                `http://localhost:5000/api/applications/${editingId}`,
+                `${API_URL}/${editingId}`,
                 {
                     method: "PUT",
                     headers: {
@@ -171,7 +172,7 @@ async function deleteApplication(id) {
     try {
 
         const response = await fetch(
-            `http://localhost:5000/api/applications/${id}`,
+            `${API_URL}/${id}`,
             {
                 method: "DELETE"
             }
@@ -254,7 +255,7 @@ async function loadApplications() {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/applications"
+             API_URL
         );
 
         applications = await response.json();
